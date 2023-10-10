@@ -10,7 +10,12 @@
 		}
 	],
 	"settings": {
-		"typescript.tsc.autoDetect": "off"
+		"typescript.tsc.autoDetect": "off",
+		"dotnet.defaultSolution": "disable",
+		"files.associations": {
+			"xutility": "cpp",
+			"*.ipp": "cpp"
+		}
 	},
 	"extensions": {
 		"recommendations": [
