@@ -42,15 +42,17 @@ void AMovingPlatform::MovePlatform(float DeltaTime)
 		SetActorLocation(currentLocation);
 	}
 }
-void AMovingPlatform::RotatePlatform(float DT)
+void AMovingPlatform::RotatePlatform(float DeltaTime)
 {
-	UE_LOG(LogTemp, Display, TEXT("%s Rotating... "), *GetName());
+	FRotator CurrentRotation = GetActorRotation();
+	AddActorLocalRotation(RotationVelocity * DeltaTime);
 }
 bool AMovingPlatform::ShoulPlatformReturn() const
-{	
+{
 	return GetDistanceMoved() > MovedDistance;
 }
 float AMovingPlatform::GetDistanceMoved() const
 {
 	float distance = FVector::Distance(startLocation, GetActorLocation());
+	return distance;
 }
